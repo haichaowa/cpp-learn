@@ -17,3 +17,6 @@ vendor/
 
 # 忽略环境变量配置
 .env
+
+# 远程开发目录
+cmake-build-debug-*/
