@@ -4,6 +4,9 @@
 #include <vector>
 #include <unordered_map>
 #include <iostream>
+#include <gtest/gtest.h>
+#include <fmt/ranges.h>
+
 class Solution {
 public:
     std::vector<int> twoSum(std::vector<int>& nums, int target) {
@@ -20,11 +23,16 @@ public:
     }
 };
 
-int main(){
+TEST(TwoSumTest, Example1) {
     Solution s;
     std::vector<int> nums{2,7,11,15};
+    std::vector<int> expected{0, 1};
     auto res = s.twoSum(nums, 9);
-    for(int i=0; i< res.size(); i++){
-        std::cout<<res[i]<<std::endl;
-    }
+    ASSERT_EQ(res, expected);
+}
+
+
+int main(int argc, char** argv){
+    testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
 }

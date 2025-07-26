@@ -2,9 +2,14 @@ cmake_minimum_required(VERSION 3.0.0)
 
 set(CMAKE_CXX_STANDARD 11)
 
-project(CppLearn)
-add_executable(twosum leetcode/hot100/01_TwoSum.cpp)
+include_directories(
+        /usr/include  # 远程第三方库的安装路径
+        ${PROJECT_SOURCE_DIR}/include
+)
 
-set(HOME build)
-set(EXECUTABLE_OUTPUT_PATH ${HOME}/bin)
-set(LIBRARY_OUTPUT_PATH ${HOME}/lib)
+# 包含第三方库
+find_package(fmt REQUIRED)
+find_package(GTest REQUIRED)
+
+# 添加 leetcode 子目录
+add_subdirectory(leetcode)
