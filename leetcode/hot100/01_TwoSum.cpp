@@ -30,9 +30,3 @@ TEST(TwoSumTest, Example1) {
     auto res = s.twoSum(nums, 9);
     ASSERT_EQ(res, expected);
 }
-
-
-int main(int argc, char** argv){
-    testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}

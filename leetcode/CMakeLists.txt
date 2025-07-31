@@ -17,6 +17,16 @@ foreach(SRC ${HOT100_SOURCES})
     # 为每个 .cpp 文件创建可执行文件
     add_executable(${TARGET_NAME} ${SRC})
 
+
+
+#    add_executable(${TARGET_NAME} ${SRC}
+#            hot100/49_GroupAnagrams.cpp
+#            hot100/main.cpp
+#            hot100/128_LongestConsecutiveSequence.cpp
+#            hot100/283_MoveZeroes.cpp
+#            hot100/11_ContainerWithMostWater.cpp
+#            hot100/03_3Sum.cpp)
+
     # 链接公共依赖
     target_link_libraries(${TARGET_NAME} PRIVATE ${LEETCODE_DEPS})
 endforeach()
