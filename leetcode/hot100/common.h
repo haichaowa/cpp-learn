@@ -5,6 +5,7 @@
 #ifndef CPP_LEARN_COMMON_H
 #define CPP_LEARN_COMMON_H
 
+#include <array>
 #include <vector>
 #include <unordered_map>
 #include <unordered_set>
