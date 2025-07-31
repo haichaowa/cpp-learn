@@ -128,3 +128,11 @@ origin  https://github.com/haichaowa/cpp-learn.git (push)
 # 更改https协议为ssh
 git remote set-url origin git@github.com:haichaowa/cpp-learn.git
 ```
+
+## CLion
+
+### 远程开发去除语法错误红线
+https://blog.csdn.net/qq_41596730/article/details/135078183
+```text
+Tools | Resync with Remote Hosts
+```
