@@ -3,12 +3,6 @@
 //
 #include "common.h"
 
-struct ListNode {
-      int val;
-      ListNode *next;
-      ListNode(int x) : val(x), next(nullptr) {}
- };
-
 class Solution {
 public:
     ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
@@ -22,18 +16,6 @@ public:
     }
 };
 
-
-// 辅助函数：根据数组创建链表（返回头节点）
-ListNode* createList(const std::vector<int>& nums) {
-    if (nums.empty()) return nullptr;
-    ListNode* head = new ListNode(nums[0]);
-    ListNode* curr = head;
-    for (size_t i = 1; i < nums.size(); ++i) {
-        curr->next = new ListNode(nums[i]);
-        curr = curr->next;
-    }
-    return head;
-}
 
 // 辅助函数：连接两个链表（让list1的尾节点指向list2的指定索引节点，制造交点）
 // skipA：list1中交点前的节点数（即list1尾节点连接到list2的第skipB个节点，索引从0开始）
@@ -57,15 +39,6 @@ void connectLists(ListNode* list1, ListNode* list2, int skipA, int skipB) {
     curr1->next = curr2;
 }
 
-// 辅助函数：释放链表内存（避免内存泄漏）
-void freeList(ListNode* head) {
-    ListNode* temp = nullptr;
-    while (head != nullptr) {
-        temp = head;
-        head = head->next;
-        delete temp;
-    }
-}
 
 // 测试用例：匹配题目中的Example1
 TEST(getIntersectionNode, Example1) {
